@@ -3,30 +3,35 @@
 <h3>All registered users:</h3>
 <ul>
     <li *ngFor="let user of users">
-        <p>firstName:
-            <input [(ngModel)]="user.firstName" placeholder="firstName"/>
+        <p>
+            {{user.username}}
         </p>
-        <p>lastName:
-            <input [(ngModel)]="user.lastName" placeholder="lastName"/>
+        <p>
+            {{user.firstName}}
         </p>
-        <p>city:
-            <input [(ngModel)]="user.city" placeholder="city"/>
+        <p>
+            {{user.lastName}}
         </p>
-        <p>country:
-            <input [(ngModel)]="user.country" placeholder="country"/>
-        </p>
-        <p>email:
-            <input [(ngModel)]="user.email" placeholder="email"/>
-        </p>
-        <p>username:
-            <input [(ngModel)]="user.username" placeholder="username"/>
-        </p>
-        <p>pass:
-            <input [(ngModel)]="user.password" placeholder="pass"/>
-        </p>
+        <a [routerLink]="['/editUser/',user.id]">Edit</a> |
         <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
     </li>
-</ul>
+</ul> 
+
+
 <!-- 
-<button (click)="goBack()">go back</button>
-<button (click)="save()">save</button> -->
+<ul>
+    <li *ngFor="let user of users">
+        <p>
+            {{user.username}}
+        </p>
+        <p>
+            {{user.firstName}}
+        </p>
+        <p>
+            {{user.lastName}}
+        </p>
+        <a [routerLink]="['/edituser/',user.id]">Edit</a> |
+        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul> 
+-->
