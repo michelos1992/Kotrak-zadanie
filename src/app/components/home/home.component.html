@@ -3,7 +3,30 @@
 <h3>All registered users:</h3>
 <ul>
     <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+        <p>firstName:
+            <input [(ngModel)]="user.firstName" placeholder="firstName"/>
+        </p>
+        <p>lastName:
+            <input [(ngModel)]="user.lastName" placeholder="lastName"/>
+        </p>
+        <p>city:
+            <input [(ngModel)]="user.city" placeholder="city"/>
+        </p>
+        <p>country:
+            <input [(ngModel)]="user.country" placeholder="country"/>
+        </p>
+        <p>email:
+            <input [(ngModel)]="user.email" placeholder="email"/>
+        </p>
+        <p>username:
+            <input [(ngModel)]="user.username" placeholder="username"/>
+        </p>
+        <p>pass:
+            <input [(ngModel)]="user.password" placeholder="pass"/>
+        </p>
+        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
     </li>
 </ul>
+<!-- 
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button> -->
