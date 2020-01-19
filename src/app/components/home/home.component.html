@@ -17,21 +17,4 @@
     </li>
 </ul> 
 
-
-<!-- 
-<ul>
-    <li *ngFor="let user of users">
-        <p>
-            {{user.username}}
-        </p>
-        <p>
-            {{user.firstName}}
-        </p>
-        <p>
-            {{user.lastName}}
-        </p>
-        <a [routerLink]="['/edituser/',user.id]">Edit</a> |
-        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul> 
--->
+<a routerLink="/adduser" class="btn btn-link">Add user</a>

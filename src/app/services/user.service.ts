@@ -24,6 +24,9 @@ export class UserService {
     register(user: User) {
         return this.http.post('api/users/register', user);
     }
+    addUser(user: User) {
+        return this.http.post('api/users/register', user);
+    }
     update(user: User) {
         let uuu = JSON.parse(localStorage.getItem('users'));
         let uu1 = uuu.filter(e => e.id != user.id);

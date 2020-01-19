@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-//import { HttpModule } from '@angular/http';
 
 import { routing } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +11,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 
-//import { HttpModule } from '@angular/http';
 import { AlertComponent } from './components/alert.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
@@ -20,6 +18,7 @@ import { fakeBackendProvider } from './helpers/fake-backend';
 
 import { RouterModule } from '@angular/router';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +27,13 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    //HttpModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

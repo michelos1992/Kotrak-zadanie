@@ -60,17 +60,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 }
             }
 
-            // if (request.url.endsWith('/users/') && request.method === 'PUT') {
-            //     //debugger;
-            //     let newUser = request.body;
-                
-            //     // newUser.id = ids;
-            //     // users.push(newUser.body);
-            //     localStorage.setItem('user.id', JSON.stringify(users));
-
-            //     return of(new HttpResponse({ status: 200 }));
-            // }
-
             if (request.url.endsWith('/users/register') && request.method === 'POST') {
                 let newUser = request.body;
 
