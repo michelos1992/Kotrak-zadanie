@@ -19,9 +19,14 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
         let id = params['id'];
-        
-        this.userService.getById(id).subscribe(User => this.user = User);
+        this.userService.getUser(id).subscribe(User => this.user = User);
     });
   }
+
+  SaveEdit(): void {
+    this.userService.update(this.user).subscribe(success => {
+    this.success = true;
+  });
+}
 
 }

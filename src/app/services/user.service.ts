@@ -1,6 +1,12 @@
 import { User } from './../models/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +22,16 @@ export class UserService {
   getById(id: number) {
       return this.http.get('api/users/' + id);
   }
-
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>('api/users/' + id);
+  }
   register(user: User) {
       return this.http.post('api/users/register', user);
   }
 
-  update(user: User) {
-      return this.http.put('api/users/' + user.id, user);
+  update(user: User): Observable<User> {
+      const data = JSON.stringify(user);
+      return this.http.put<User>('api/users/', user);
   }
 
   delete(id: number) {
