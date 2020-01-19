@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/app/components/add-user/temp.ts
+src/app/components/generate-pass/generate-pass.component.html
+src/app/components/generate-pass/generate-pass.component.scss
+src/app/components/generate-pass/generate-pass.component.spec.ts
+src/app/components/generate-pass/generate-pass.component.ts
