@@ -9,32 +9,37 @@ const httpOptions = {
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'    
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  getAll() {
-      return this.http.get<User[]>('api/users');
-  }
+    getAll() {
+        return this.http.get<User[]>('api/users');
+    }
 
-  getById(id: number) {
-      return this.http.get('api/users/' + id);
-  }
-  getUser(id: number): Observable<User> {
+    getById(id: number) {
+        return this.http.get('api/users/' + id);
+    }
+    getUser(id: number): Observable<User> {
     return this.http.get<User>('api/users/' + id);
-  }
-  register(user: User) {
-      return this.http.post('api/users/register', user);
-  }
+    }
+    register(user: User) {
+        return this.http.post('api/users/register', user);
+    }
+    
+    update(user: User) {
+        debugger;
+        let uuu = localStorage.getItem('user');
+        localStorage.setItem('user', JSON.stringify(user));
+        // return this.http.put('api/users/', user, httpOptions);
+    }
+//   update(user: User) {
+//     return this.http.put('api/users/' + user.id, user);
+// }
 
-  update(user: User): Observable<User> {
-      const data = JSON.stringify(user);
-      return this.http.put<User>('api/users/', user);
-  }
-
-  delete(id: number) {
-      return this.http.delete('api/users/' + id);
-  }
+    delete(id: number) {
+        return this.http.delete('api/users/' + id);
+    }
 }

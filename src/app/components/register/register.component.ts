@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
           lastName: ['', Validators.required],
           city: ['', Validators.required],
           country: ['', Validators.required],
-          email: ['', Validators.required],
           username: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]]
       });
@@ -44,6 +43,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
       this.submitted = true;
 
+      //debugger;
       if (this.registerForm.invalid) {
           return;
       }

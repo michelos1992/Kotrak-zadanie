@@ -24,12 +24,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     let user = filteredUsers[0];
                     let body = {
                         id: user.id,
-                        username: user.username,
                         firstName: user.firstName,
                         lastName: user.lastName,
                         city: user.city,
                         country: user.country,
                         email: user.email,
+                        username: user.username,
                         token: 'fake-jwt-token'
                     };
 
@@ -59,6 +59,17 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return throwError({ status: 401, error: { message: 'Unauthorised' } });
                 }
             }
+
+            // if (request.url.endsWith('/users/') && request.method === 'PUT') {
+            //     //debugger;
+            //     let newUser = request.body;
+                
+            //     // newUser.id = ids;
+            //     // users.push(newUser.body);
+            //     localStorage.setItem('user.id', JSON.stringify(users));
+
+            //     return of(new HttpResponse({ status: 200 }));
+            // }
 
             if (request.url.endsWith('/users/register') && request.method === 'POST') {
                 let newUser = request.body;

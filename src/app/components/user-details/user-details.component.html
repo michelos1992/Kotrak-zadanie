@@ -2,37 +2,35 @@
 
 <h3>Edit user:</h3>
 <ul>
-    <div *ngIf="user && !success">
-        <li>
-            <p>id:
-                {{user.id}}
-            </p>
-            <p>firstName:
-                <input type="text" [(ngModel)]="user.firstName" placeholder="firstName"/>
-            </p>
-            <p>lastName:
-                <input type="text" [(ngModel)]="user.lastName" placeholder="lastName"/>
-            </p>
-            <p>city:
-                <input type="text" [(ngModel)]="user.city" placeholder="city"/>
-            </p>
-            <p>country:
-                <input type="text" [(ngModel)]="user.country" placeholder="country"/>
-            </p>
-            <p>email:
-                <input type="text" [(ngModel)]="user.email" placeholder="email"/>
-            </p>
-            <p>username:
-                <input type="text" [(ngModel)]="user.username" placeholder="username"/>
-            </p>
-            <p>pass:
-                <input type="text" [(ngModel)]="user.password" placeholder="pass"/>
-            </p>
-            <button (click)="SaveEdit()">Save</button>
-            <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-            <button  [routerLink]="['/home']">Cancel</button>
-        </li>
-    </div>
+    <li *ngIf="user && !success">
+        <p>id:
+            {{user.id}}
+        </p>
+        <p>firstName:
+            <input type="text" [(ngModel)]="user.firstName" placeholder="firstName"/>
+        </p>
+        <p>lastName:
+            <input type="text" [(ngModel)]="user.lastName" placeholder="lastName"/>
+        </p>
+        <p>city:
+            <input type="text" [(ngModel)]="user.city" placeholder="city"/>
+        </p>
+        <p>country:
+            <input type="text" [(ngModel)]="user.country" placeholder="country"/>
+        </p>
+        <p>email:
+            <input type="text" [(ngModel)]="user.email" placeholder="email"/>
+        </p>
+        <p>username:
+            <input type="text" [(ngModel)]="user.username" placeholder="username"/>
+        </p>
+        <p>pass:
+            <input type="text" [(ngModel)]="user.password" placeholder="pass"/>
+        </p>
+        <button (click)="SaveEdit()">Save</button>
+        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+        <button  [routerLink]="['/home']">Cancel</button>
+    </li>
 </ul>
 
 <div *ngIf="success">
