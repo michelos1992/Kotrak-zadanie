@@ -7,25 +7,25 @@
             {{user.id}}
         </p>
         <p>firstName:
-            <input type="text" [(ngModel)]="user.firstName" placeholder="firstName"/>
+            <input type="text" name="firstName" [(ngModel)]="user.firstName" placeholder="firstName"/>
         </p>
         <p>lastName:
-            <input type="text" [(ngModel)]="user.lastName" placeholder="lastName"/>
+            <input type="text" name="lastName" [(ngModel)]="user.lastName" placeholder="lastName"/>
         </p>
         <p>city:
-            <input type="text" [(ngModel)]="user.city" placeholder="city"/>
+            <input type="text" name="city" [(ngModel)]="user.city" placeholder="city"/>
         </p>
         <p>country:
-            <input type="text" [(ngModel)]="user.country" placeholder="country"/>
+            <input type="text" name="country" [(ngModel)]="user.country" placeholder="country"/>
         </p>
         <p>email:
-            <input type="text" [(ngModel)]="user.email" placeholder="email"/>
+            <input type="text" name="email" [(ngModel)]="user.email" placeholder="email"/>
         </p>
         <p>username:
-            <input type="text" [(ngModel)]="user.username" placeholder="username"/>
+            <input type="text" name="username" [(ngModel)]="user.username" placeholder="username"/>
         </p>
         <p>pass:
-            <input type="text" [(ngModel)]="user.password" placeholder="pass"/>
+            <input type="text" name="password" [(ngModel)]="user.password" placeholder="pass"/>
         </p>
         <button (click)="SaveEdit()">Save</button>
         <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>

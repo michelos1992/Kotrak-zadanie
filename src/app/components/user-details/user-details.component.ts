@@ -29,7 +29,6 @@ export class UserDetailsComponent implements OnInit {
     this.location.back();
   }
   SaveEdit(): void {
-    //debugger;
     this.userService.update(this.user);
   };
 }

@@ -18,27 +18,16 @@ export class UserService {
     getAll() {
         return this.http.get<User[]>('api/users');
     }
-
-    getById(id: number) {
-        return this.http.get('api/users/' + id);
-    }
     getUser(id: number): Observable<User> {
-    return this.http.get<User>('api/users/' + id);
+        return this.http.get<User>('api/users/' + id);
     }
     register(user: User) {
         return this.http.post('api/users/register', user);
     }
-    
     update(user: User) {
-        debugger;
         let uuu = localStorage.getItem('user');
-        localStorage.setItem('user', JSON.stringify(user));
-        // return this.http.put('api/users/', user, httpOptions);
+        localStorage.setItem('uuu', JSON.stringify(user));
     }
-//   update(user: User) {
-//     return this.http.put('api/users/' + user.id, user);
-// }
-
     delete(id: number) {
         return this.http.delete('api/users/' + id);
     }
