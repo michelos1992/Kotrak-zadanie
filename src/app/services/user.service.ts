@@ -25,8 +25,10 @@ export class UserService {
         return this.http.post('api/users/register', user);
     }
     update(user: User) {
-        let uuu = localStorage.getItem('user');
-        localStorage.setItem('uuu', JSON.stringify(user));
+        let uuu = JSON.parse(localStorage.getItem('users'));
+        let uu1 = uuu.filter(e => e.id != user.id);
+        uu1.push(user);
+        localStorage.setItem('users', JSON.stringify(uu1));
     }
     delete(id: number) {
         return this.http.delete('api/users/' + id);
