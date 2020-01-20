@@ -1,0 +1,40 @@
+<h3>Show user: </h3>
+<ul>
+    <li *ngIf="user && !success">
+        <p>id:
+            {{user.id}}
+        </p>
+        <p>firstName:
+            {{user.firstName}}
+        </p>
+        <p>lastName:
+            {{user.lastName}}
+        </p>
+        <p>city:
+            {{user.city}}
+        </p>
+        <p>country:
+            {{user.country}}
+        </p>
+        <p>email:
+            {{user.email}}
+        </p>
+        <p>username:
+            {{user.username}}
+        </p>
+        <p>pass:
+            {{user.pass}}
+        </p>
+    </li>
+</ul>
+<div class="row">
+    <ul>
+        <li *ngIf="weathers">
+            <p>{{weathers.name}}</p>
+        </li>
+    </ul>
+</div>
+
+<button (click)="ShowWeather()">Weather</button>
+
+<!-- https://api.met.no/weatherapi/airqualityforecast/0.1/met?station=NO0057A -->

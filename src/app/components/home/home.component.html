@@ -5,7 +5,8 @@
     <li *ngFor="let user of users">
         {{user.username}} | 
         <a [routerLink]="['/editUser/',user.id]">Edit</a> |
-        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a> | 
+        <a [routerLink]="['/showUser/',user.id]">Show</a>
     </li>
 </ul> 
 

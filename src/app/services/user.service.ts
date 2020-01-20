@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Weather } from '../models/weather';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -35,5 +36,8 @@ export class UserService {
     }
     delete(id: number) {
         return this.http.delete('api/users/' + id);
+    }
+    getWeather(){
+        return this.http.get<Weather[]>('https://api.met.no/weatherapi/airqualityforecast/0.1/met?station=NO0057A')
     }
 }

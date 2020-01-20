@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login';
 import { RegisterComponent } from './components/register';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
-import { GeneratePassComponent } from './components/generate-pass/generate-pass.component';
+import { ShowUserComponent } from './components/show-user/show-user.component';
 
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'editUser/:id', component: UserDetailsComponent},
   { path: 'home', component: HomeComponent},
   { path: 'adduser', component: AddUserComponent},
-  { path: 'generatePass', component: GeneratePassComponent},
+  { path: 'showUser/:id', component: ShowUserComponent},
 
   { path: '**', redirectTo: '' }
 ];

@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { GeneratePassComponent } from './components/generate-pass/generate-pass.component';
+import { ShowUserComponent } from './components/show-user/show-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GeneratePassComponent } from './components/generate-pass/generate-pass.
     RegisterComponent,
     UserDetailsComponent,
     AddUserComponent,
-    GeneratePassComponent
+    GeneratePassComponent,
+    ShowUserComponent
   ],
   imports: [
     BrowserModule,
