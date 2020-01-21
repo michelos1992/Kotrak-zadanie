@@ -37,11 +37,11 @@ export class UserService {
     delete(id: number) {
         return this.http.delete('api/users/' + id);
     }
-    
-    getWeather(location: string) {
+        
+    getWeather(location) {
+        debugger;
         return this.http.get(
-            "http://api.weatherstack.com/current?access_key=d26c22f6a15080b6cc86847917174e85&&query=" +
-            location
+        "http://api.weatherstack.com/current?access_key=d26c22f6a15080b6cc86847917174e85&&query=Berlin"
         );
     }
 }

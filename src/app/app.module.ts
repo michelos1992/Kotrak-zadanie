@@ -37,7 +37,6 @@ import { ShowUserComponent } from './components/show-user/show-user.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
@@ -45,10 +44,6 @@ import { ShowUserComponent } from './components/show-user/show-user.component';
     routing
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

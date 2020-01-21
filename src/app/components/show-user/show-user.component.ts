@@ -12,26 +12,22 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./show-user.component.scss']
 })
 export class ShowUserComponent implements OnInit {
-
-  private sub: any;
-  user: User;
   public weatherSearchForm: FormGroup;
   public weatherData: any;
 
-  constructor(private userService: UserService, private route: ActivatedRoute, 
-    private location: Location, 
-    private formBuilder: FormBuilder,) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-        let id = params['id'];
-        this.userService.getUser(id).subscribe(User => this.user = User);
+    this.weatherSearchForm = this.formBuilder.group({
+      location: [""]
     });
-    this.ShowWeather();
   }
 
-  ShowWeather() {
-    this.userService.getWeather(this.user.city).subscribe(data => {
+  sendToAPIXU(formValues) {
+    this.userService.getWeather(formValues.location).subscribe(data => {
       this.weatherData = data;
       console.log(this.weatherData);
     });
