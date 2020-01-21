@@ -19,7 +19,6 @@ import { fakeBackendProvider } from './helpers/fake-backend';
 import { RouterModule } from '@angular/router';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
-import { GeneratePassComponent } from './components/generate-pass/generate-pass.component';
 import { ShowUserComponent } from './components/show-user/show-user.component';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { ShowUserComponent } from './components/show-user/show-user.component';
     RegisterComponent,
     UserDetailsComponent,
     AddUserComponent,
-    GeneratePassComponent,
     ShowUserComponent
   ],
   imports: [
