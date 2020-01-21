@@ -8,7 +8,6 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { ShowUserComponent } from './components/show-user/show-user.component';
 
-
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },

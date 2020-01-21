@@ -27,14 +27,17 @@
         </p>
     </li>
 </ul>
-<div class="row">
-    <ul>
-        <li *ngIf="weathers">
-            <p>{{weathers.name}}</p>
-        </li>
-    </ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Search for Weather:</h3>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Weather Details:</h3>
+            <p class="text-center">
+                Temperature in Degrees Celsius: {{ this.weatherData.current.temperature }}
+            </p>
+        </div>
+    </div>
 </div>
-
-<button (click)="ShowWeather()">Weather</button>
-
-<!-- https://api.met.no/weatherapi/airqualityforecast/0.1/met?station=NO0057A -->

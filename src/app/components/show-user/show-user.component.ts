@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models';
-import { Weather } from 'src/app/models/weather';
 import { UserService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { first } from 'rxjs/operators';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-show-user',
@@ -15,24 +15,25 @@ export class ShowUserComponent implements OnInit {
 
   private sub: any;
   user: User;
-  weathers: Weather[] = [];
+  public weatherSearchForm: FormGroup;
+  public weatherData: any;
 
   constructor(private userService: UserService, private route: ActivatedRoute, 
-    private location: Location) { }
+    private location: Location, 
+    private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
-    
     this.sub = this.route.params.subscribe(params => {
         let id = params['id'];
         this.userService.getUser(id).subscribe(User => this.user = User);
     });
-    this.showWeather();
+    this.ShowWeather();
   }
 
-  private showWeather() {
-    this.userService.getWeather().pipe(first()).subscribe(weathers => {
-        this.weathers = weathers;
+  ShowWeather() {
+    this.userService.getWeather(this.user.city).subscribe(data => {
+      this.weatherData = data;
+      console.log(this.weatherData);
     });
   }
-
 }
