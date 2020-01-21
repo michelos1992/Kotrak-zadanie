@@ -76,7 +76,6 @@ export class AddUserComponent implements OnInit {
   numbers: Boolean = this.checkboxes[1].checked;
 
   passwordLenght: Number = 6;
-  buttonLabel: String = "Generate";
   newPassword: String;
 
   // Copy password to clipboard
@@ -108,10 +107,6 @@ export class AddUserComponent implements OnInit {
 
     // Call copy function
     setTimeout(() => this.copyPassword());
-    console.log(this.newPassword);
 
-    // Change text on button when clicked
-    this.buttonLabel = "Copied!";
-    setTimeout(() => { this.buttonLabel = "Generate" }, 1500);
   }
 }
