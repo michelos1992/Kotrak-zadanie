@@ -39,7 +39,6 @@ export class UserService {
     }
         
     getWeather(location) {
-        debugger;
         return this.http.get(
         "http://api.weatherstack.com/current?access_key=d26c22f6a15080b6cc86847917174e85&&query=Berlin"
         );
